@@ -11,6 +11,10 @@ import { HomeComponent } from './home/home.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
+import { HistoryService } from './history.service';
+import { WikisearchService } from './wikisearch.service';
+import { GiphysearchService } from './giphysearch.service';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -31,7 +35,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [HistoryService, WikisearchService, GiphysearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
